@@ -1,7 +1,12 @@
 <h1>Search Results</h1>
 
-<% @results.each do |result| %>
-  <%= result.title %>
-  <%= result.author %>
-  <%= result.content %>
+<% @results.each_with_index do |result, index| %>
+  <section class = "poem-<%= index %>">
+    <h3><%= result.title %></h3>
+    <p><%= result.author %></p>
+    <% result.content.each do |line| %>
+    <p><%= line %></p>
+    <% end %>
+    <br>
+  </section>
 <% end %>

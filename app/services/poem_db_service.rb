@@ -1,6 +1,6 @@
 class PoemDbService
   def author_search(author)
-    to_json("/author/#{author}")
+    to_json("/author/#{author}").first(10)
   end
 
   private

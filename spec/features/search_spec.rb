@@ -9,6 +9,10 @@ RSpec.describe "When I fill in a field on the root path" do
 
     expect(current_path).to eq('/search')
 
-    expect(page).to have_content("Emily Dickinson")
+    within '.poem-0' do
+      expect(page).to have_content("Emily Dickinson")
+      expect(page).to have_content("Not at Home to Callers")
+      expect(page).to have_content("Says the Naked Tree")
+    end
   end
 end

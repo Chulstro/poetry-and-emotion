@@ -1,4 +1,6 @@
 class Poem
+  attr_reader :title, :author, :content
+
   def initialize(poem_data)
     @title = poem_data[:title]
     @author = poem_data[:author]
@@ -6,9 +8,8 @@ class Poem
   end
 
   def self.poems_by_author(author)
-    poems = PoemDbService.new.author_search(author).first(10)
-    poems.each do |poem|
-      binding.pry
+    poem_info = PoemDbService.new.author_search(author)
+    poem_info.map do |poem|
       Poem.new(poem)
     end
   end
