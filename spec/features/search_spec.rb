@@ -14,5 +14,11 @@ RSpec.describe "When I fill in a field on the root path" do
       expect(page).to have_content("Not at Home to Callers")
       expect(page).to have_content("Says the Naked Tree")
     end
+    
+    within '.poem-9' do
+      expect(page).to have_content("Emily Bronte")
+      expect(page).to have_content("'Tis moonlight, summer moonlight")
+      expect(page).to have_content("All soft and still and fair;")
+    end
   end
 end

@@ -4,7 +4,7 @@ class Poem
   def initialize(poem_data)
     @title = poem_data[:title]
     @author = poem_data[:author]
-    @content = poem_data[:lines]
+    @content = poem_data[:lines].flatten.to_s
   end
 
   def self.poems_by_author(author)

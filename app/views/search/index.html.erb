@@ -4,9 +4,7 @@
   <section class = "poem-<%= index %>">
     <h3><%= result.title %></h3>
     <p><%= result.author %></p>
-    <% result.content.each do |line| %>
-    <p><%= line %></p>
-    <% end %>
+    <p><%= result.content %></p>
     <br>
   </section>
 <% end %>
