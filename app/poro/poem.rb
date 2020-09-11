@@ -4,7 +4,8 @@ class Poem
   def initialize(poem_data)
     @title = poem_data[:title]
     @author = poem_data[:author]
-    @content = poem_data[:lines].flatten.to_s
+    @content = poem_data[:lines].join
+    # @tone = tone(@content)
   end
 
   def self.poems_by_author(author)
@@ -13,4 +14,11 @@ class Poem
       Poem.new(poem)
     end
   end
+
+  # private
+  # 
+  # def tone(content)
+  #   binding.pry
+  #   Tone.find_tone(content)
+  # end
 end
